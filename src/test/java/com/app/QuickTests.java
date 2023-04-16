@@ -1,12 +1,12 @@
-import org.example.Quick;
-import org.example.Quick3way;
+package com.app;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Quick3wayTests {
+public class QuickTests {
 
     @Test
     public void Test1(){
@@ -15,7 +15,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A, E, G, I, L, O, P, S]");
     }
 
@@ -26,7 +26,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[]");
     }
 
@@ -37,7 +37,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A, E, G, I, L, O, O, O, O, O, O, P, S]");
     }
 
@@ -48,7 +48,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[ ,  ,  ,  ,  ]");
     }
 
@@ -59,7 +59,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[ ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , A, E, G, I, L, O, P, S]");
     }
 
@@ -70,7 +70,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A]");
     }
 
@@ -81,7 +81,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[ ,  ,  ,  ,  ,  , A, A, B]");
     }
 
@@ -92,7 +92,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A, A]");
     }
 
@@ -103,7 +103,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[1, 1, 1, 1, 2, 2, 5, 5, 5, 5, A, A, A, A, B, D, D, D, D, S, S]");
     }
 
@@ -115,7 +115,7 @@ public class Quick3wayTests {
         for (int i = 0; i < charArray.length; i++) {
             charObjectArray[i] = charArray[i];
         }
-        Quick3way.sort(charObjectArray);
+        Quick.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A, B, C, ✐, ✐, ✐, ✩, ✩, ✩]");
     }
 }
