@@ -1,4 +1,4 @@
-package com.app;
+package org.example;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdRandom;
  *                https://algs4.cs.princeton.edu/23quicksort/words3.txt
  *
  *  Sorts a sequence of strings from standard input using quicksort.
- *   
+ *
  *  % more tiny.txt
  *  S O R T E X A M P L E
  *
@@ -21,7 +21,7 @@ import edu.princeton.cs.algs4.StdRandom;
  *
  *  % more words3.txt
  *  bed bug dad yes zoo ... all bad yet
- *       
+ *
  *  % java Quick < words3.txt
  *  all bad bed bug dad ... yes yet zoo    [ one string per line ]
  *
@@ -37,7 +37,7 @@ import edu.princeton.cs.algs4.StdRandom;
  *  array and selecting the ith smallest element in an array using quicksort.
  *  <p>
  *  For additional documentation, see
- *  <a href="https://algs4.cs.princeton.edu/23quicksort">Section 2.3</a>   
+ *  <a href="https://algs4.cs.princeton.edu/23quicksort">Section 2.3</a>
  *  of <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  *  @author Robert Sedgewick
@@ -59,32 +59,9 @@ public class Quick {
     }
 
     // quicksort the subarray from a[lo] to a[hi]
-    private static void sort(Comparable[] a, int lo, int hi) { 
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo) return;
-        
-        int i = lo;
-        int j = hi + 1; 
-        Comparable v = a[lo];
-        while (i < j) {  // Regression: Stop once pointers cross
-            // find item on lo to swap
-            while (less(a[++i], v)) {
-                if (i == hi) break;
-            }
-
-            // find item on hi to swap
-            while (less(v, a[--j])) {
-                if (j == lo) break;      // redundant since a[lo] acts as sentinel
-            }
-
-            // Regression: Only exchange if pointers haven't crossed yet
-            if (i < j) {
-                exch(a, i, j);
-            } else {
-                // put partitioning item v at a[j]
-                exch(a, lo, j);
-            }
-        }
-
+        int j = partition(a, lo, hi);
         sort(a, lo, j-1);
         sort(a, j+1, hi);
         assert isSorted(a, lo, hi);
@@ -94,9 +71,9 @@ public class Quick {
     // and return the index j.
     private static int partition(Comparable[] a, int lo, int hi) {
         int i = lo;
-        int j = hi + 1; 
+        int j = hi + 1;
         Comparable v = a[lo];
-        while (i < j) {  // Regression: Stop once pointers cross
+        while (true) {
 
             // find item on lo to swap
             while (less(a[++i], v)) {
@@ -108,14 +85,14 @@ public class Quick {
                 if (j == lo) break;      // redundant since a[lo] acts as sentinel
             }
 
-            // Regression: Only exchange if pointers haven't crossed yet
-            if (i < j) {
-                exch(a, i, j);
-            } else {
-                // put partitioning item v at a[j]
-                exch(a, lo, j);
-            }
+            // check if pointers cross
+            if (i >= j) break;
+
+            exch(a, i, j);
         }
+
+        // put partitioning item v at a[j]
+        exch(a, lo, j);
 
         // now, a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
         return j;
@@ -148,16 +125,16 @@ public class Quick {
 
 
 
-   /***************************************************************************
-    *  Helper sorting functions.
-    ***************************************************************************/
-    
+    /***************************************************************************
+     *  Helper sorting functions.
+     ***************************************************************************/
+
     // is v < w ?
     private static boolean less(Comparable v, Comparable w) {
         if (v == w) return false;   // optimization when reference equals
         return v.compareTo(w) < 0;
     }
-        
+
     // exchange a[i] and a[j]
     private static void exch(Object[] a, int i, int j) {
         Object swap = a[i];
@@ -166,9 +143,9 @@ public class Quick {
     }
 
 
-   /***************************************************************************
-    *  Check if array is sorted - useful for debugging.
-    ***************************************************************************/
+    /***************************************************************************
+     *  Check if array is sorted - useful for debugging.
+     ***************************************************************************/
     private static boolean isSorted(Comparable[] a) {
         return isSorted(a, 0, a.length - 1);
     }
@@ -211,5 +188,4 @@ public class Quick {
             StdOut.println(ith);
         }
     }
-
 }
