@@ -83,10 +83,10 @@
                 </dependencies>
                 <configuration>
                     <targetClasses>
-                        <param>com.app.*Quick*</param>
+                        <param>com.app.*Quick3way*</param>
                     </targetClasses>
                     <excludedClasses>
-                        <param>com.app.*Quick3way*</param>
+                        <param>com.app.*Quick*</param>
                         <param>com.app.*Main*</param>
                     </excludedClasses>
                     <targetTests>
