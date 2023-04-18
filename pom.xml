@@ -86,20 +86,20 @@
                         <param>com.app.*Quick3way*</param>
                     </targetClasses>
                     <excludedClasses>
-                        <param>com.app.*Quick*</param>
+                        <param>com.app.Quick</param>
                         <param>com.app.*Main*</param>
                     </excludedClasses>
                     <targetTests>
-                        <param>com.app.QuickTests</param>
+                        <param>com.app.Quick3wayTests</param>
                     </targetTests>
 <!--                    <excludedMethods>-->
-<!--                        <param>partition</param>-->
+<!--                        <param>shuffle</param>-->
 <!--                        <param>select</param>-->
 <!--                        <param>isSorted</param>-->
 <!--                        <param>less</param>-->
 <!--                        <param>exch</param>-->
 <!--                        <param>show</param>-->
-<!--                        <param>main</param>-->
+<!--                        <param>main1</param>-->
 <!--                    </excludedMethods>-->
                 </configuration>
             </plugin>
