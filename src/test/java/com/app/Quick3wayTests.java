@@ -128,7 +128,7 @@ public class Quick3wayTests {
             charObjectArray[i] = charArray[i];
         }
         Quick3way.sort(charObjectArray);
-        assertEquals(Arrays.toString(charObjectArray),"[A,B,C,D]");
+        assertEquals(Arrays.toString(charObjectArray),"[A, B, C, D]");
     }
 
     @Test
@@ -140,7 +140,7 @@ public class Quick3wayTests {
             charObjectArray[i] = charArray[i];
         }
         Quick3way.sort(charObjectArray);
-        assertEquals(Arrays.toString(charObjectArray),"[A,B,C,D]");
+        assertEquals(Arrays.toString(charObjectArray),"[A, B, C, D]");
     }
 
     @Test
@@ -152,6 +152,6 @@ public class Quick3wayTests {
             charObjectArray[i] = charArray[i];
         }
         Quick3way.sort(charObjectArray);
-        assertEquals(Arrays.toString(charObjectArray),"[A,B,B,C]");
+        assertEquals(Arrays.toString(charObjectArray),"[A, B, B, C]");
     }
 }
