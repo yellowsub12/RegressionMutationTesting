@@ -118,4 +118,40 @@ public class Quick3wayTests {
         Quick3way.sort(charObjectArray);
         assertEquals(Arrays.toString(charObjectArray),"[A, B, C, ✐, ✐, ✐, ✩, ✩, ✩]");
     }
+
+    @Test
+    // Condition: T--, Enter into If Path given A < B
+    public void regressionCmpIfTest(){
+        char[] charArray = "BACD".toCharArray();
+        Character[] charObjectArray = new Character[charArray.length];
+        for (int i = 0; i < charArray.length; i++) {
+            charObjectArray[i] = charArray[i];
+        }
+        Quick3way.sort(charObjectArray);
+        assertEquals(Arrays.toString(charObjectArray),"[A,B,C,D]");
+    }
+
+    @Test
+    // Condition: FT-, Enter into Else If Path given B > A
+    public void regressionCmpElseIfTest(){
+        char[] charArray = "ABDC".toCharArray();
+        Character[] charObjectArray = new Character[charArray.length];
+        for (int i = 0; i < charArray.length; i++) {
+            charObjectArray[i] = charArray[i];
+        }
+        Quick3way.sort(charObjectArray);
+        assertEquals(Arrays.toString(charObjectArray),"[A,B,C,D]");
+    }
+
+    @Test
+    // Condition: FFT, Enter into Else Path given B == B
+    public void regressionCmpElseTest(){
+        char[] charArray = "BBAC".toCharArray();
+        Character[] charObjectArray = new Character[charArray.length];
+        for (int i = 0; i < charArray.length; i++) {
+            charObjectArray[i] = charArray[i];
+        }
+        Quick3way.sort(charObjectArray);
+        assertEquals(Arrays.toString(charObjectArray),"[A,B,B,C]");
+    }
 }
