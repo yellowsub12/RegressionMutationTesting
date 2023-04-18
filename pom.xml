@@ -92,15 +92,29 @@
                     <targetTests>
                         <param>com.app.Quick3wayTests</param>
                     </targetTests>
-<!--                    <excludedMethods>-->
-<!--                        <param>shuffle</param>-->
-<!--                        <param>select</param>-->
-<!--                        <param>isSorted</param>-->
-<!--                        <param>less</param>-->
-<!--                        <param>exch</param>-->
-<!--                        <param>show</param>-->
-<!--                        <param>main1</param>-->
-<!--                    </excludedMethods>-->
+                    <excludedMethods>
+                        <param>isSorted</param>
+                        <param>show</param>
+                        <param>main1</param>
+                    </excludedMethods>
+<!--                    <configuration>-->
+<!--                        <targetClasses>-->
+<!--                            <param>com.app.Quick</param>-->
+<!--                        </targetClasses>-->
+<!--                        <excludedClasses>-->
+<!--                            <param>com.app.*Quick3way*</param>-->
+<!--                            <param>com.app.*Main*</param>-->
+<!--                        </excludedClasses>-->
+<!--                        <targetTests>-->
+<!--                            <param>com.app.QuickTests</param>-->
+<!--                        </targetTests>-->
+<!--                        <excludedMethods>-->
+<!--                            <param>isSorted</param>-->
+<!--                            <param>show</param>-->
+<!--                            <param>select</param>-->
+<!--                            <param>main</param>-->
+<!--                        </excludedMethods>-->
+<!--                    </configuration>-->
                 </configuration>
             </plugin>
         </plugins>
